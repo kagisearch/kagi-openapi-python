@@ -1,7 +1,6 @@
 # openapi-client
 The Kagi API provides programmatic access to data that powers our search results & more. 
-Quick start for all APIs:
-- Create an account at [Kagi](https://kagi.com/signup) - Generate an [API key](https://kagi.com/settings?p=api) - Call the API
+Get started on the [API Dashboard](https://kagi.com/api) to set up billing, manage API keys, and more.
 ### Official Client Libraries
 We offer the following libraries you can use to interact with the Kagi API. These are generated from an OpenAPI spec. If you have a language you would like to use and it's not in the list, send us a message and we will add it to the list if it is supported. Or you can use the [spec](https://kagi.redocly.app/_spec/openapi.yaml?download) to build your own custom library.
 - [Golang](https://github.com/kagisearch/kagi-openapi-golang) - [Python](https://github.com/kagisearch/kagi-openapi-python) - [TypeScript](https://github.com/kagisearch/kagi-openapi-typescript) - [Rust](https://github.com/kagisearch/kagi-openapi-rust)
