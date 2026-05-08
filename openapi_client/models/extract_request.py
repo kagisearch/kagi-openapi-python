@@ -32,7 +32,7 @@ class ExtractRequest(BaseModel):
     """ # noqa: E501
     pages: Annotated[List[PageInput], Field(min_length=1, max_length=10)] = Field(description="Array of pages to extract content from. Must contain 1-10 URLs. Each URL must be a valid HTTPS URL. ")
     timeout: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Optional timeout in seconds for the extraction operation", json_schema_extra={"examples": [30]})
-    format: Optional[StrictStr] = Field(default='json', description="Response format", json_schema_extra={"examples": ["json"]})
+    format: Optional[StrictStr] = Field(default='json', description="**(EXPERIMENTAL)** Format to serialize the API response as. The exact contents and structure of markdown output is still being worked on - please send your feedback!")
     __properties: ClassVar[List[str]] = ["pages", "timeout", "format"]
 
     @field_validator('format')

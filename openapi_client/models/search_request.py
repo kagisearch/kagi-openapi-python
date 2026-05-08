@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
 from openapi_client.models.search_request_extract import SearchRequestExtract
@@ -35,7 +35,7 @@ class SearchRequest(BaseModel):
     """ # noqa: E501
     query: StrictStr = Field(description="Search query to run.")
     workflow: Optional[StrictStr] = Field(default='search', description="Type of results to return.")
-    format: Optional[StrictStr] = Field(default='json', description="Format to serialize the API response as.")
+    format: Optional[StrictStr] = Field(default='json', description="**(EXPERIMENTAL)** Format to serialize the API response as. The exact contents and structure of markdown output is still being worked on - please send your feedback!")
     lens_id: Optional[StrictStr] = Field(default=None, description="Lens to apply to the search. Can be a built-in lens's identifier or a lens ID as shown on https://kagi.com/settings/lenses when a lens is set to be shareable. Can be just the ID portion of the URL (`https://kagi.com/lenses/ID`) or the full URL.")
     lens: Optional[SearchRequestLens] = None
     timeout: Optional[Union[Annotated[float, Field(le=4, strict=True, ge=0.5)], Annotated[int, Field(le=4, strict=True, ge=1)]]] = Field(default=None, description="Number of seconds to allow for collecting search results. Lower values will return results more quickly, but may be lower quality or inconsistent between calls. If omitted, will use the latest recommended value by Kagi.")
@@ -43,8 +43,9 @@ class SearchRequest(BaseModel):
     limit: Optional[Annotated[int, Field(le=1024, strict=True, ge=1)]] = Field(default=None, description="Maximum number of results to return. Must be between 1 and 1024.")
     filters: Optional[SearchRequestFilters] = None
     extract: Optional[SearchRequestExtract] = None
+    safe_search: Optional[StrictBool] = Field(default=True, description="Whether safe search is enabled, omitting potentially NSFW content.")
     personalizations: Optional[SearchRequestPersonalizations] = None
-    __properties: ClassVar[List[str]] = ["query", "workflow", "format", "lens_id", "lens", "timeout", "page", "limit", "filters", "extract", "personalizations"]
+    __properties: ClassVar[List[str]] = ["query", "workflow", "format", "lens_id", "lens", "timeout", "page", "limit", "filters", "extract", "safe_search", "personalizations"]
 
     @field_validator('workflow')
     def workflow_validate_enum(cls, value):
@@ -139,6 +140,7 @@ class SearchRequest(BaseModel):
             "limit": obj.get("limit"),
             "filters": SearchRequestFilters.from_dict(obj["filters"]) if obj.get("filters") is not None else None,
             "extract": SearchRequestExtract.from_dict(obj["extract"]) if obj.get("extract") is not None else None,
+            "safe_search": obj.get("safe_search") if obj.get("safe_search") is not None else True,
             "personalizations": SearchRequestPersonalizations.from_dict(obj["personalizations"]) if obj.get("personalizations") is not None else None
         })
         return _obj

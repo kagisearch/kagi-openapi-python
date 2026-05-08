@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pages** | [**List[PageInput]**](PageInput.md) | Array of pages to extract content from. Must contain 1-10 URLs. Each URL must be a valid HTTPS URL.  | 
 **timeout** | **float** | Optional timeout in seconds for the extraction operation | [optional] 
-**format** | **str** | Response format | [optional] [default to 'json']
+**format** | **str** | **(EXPERIMENTAL)** Format to serialize the API response as. The exact contents and structure of markdown output is still being worked on - please send your feedback! | [optional] [default to 'json']
 
 ## Example
 

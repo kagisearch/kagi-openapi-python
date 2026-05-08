@@ -68,6 +68,7 @@ class TestSearchRequest(unittest.TestCase):
                 extract = openapi_client.models.search_request_extract.search_request_extract(
                     count = 1, 
                     timeout = 0.5, ),
+                safe_search = True,
                 personalizations = openapi_client.models.search_request_personalizations.search_request_personalizations(
                     domains = [
                         openapi_client.models.search_request_personalizations_domains_inner.search_request_personalizations_domains_inner(
