@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**domain** | **str** | The domain to personalize (e.g., \&quot;example.com\&quot;). | [optional] 
-**bias** | **float** | Bias value to apply to results from this domain. | [optional] 
+**domain** | **str** | Domain pattern to personalize (e.g., \&quot;example.com\&quot;). Can also be a tld suffix like \&quot;.co.uk\&quot;. | 
+**kind** | **str** | Handling mode for this domain pattern | 
 
 ## Example
 

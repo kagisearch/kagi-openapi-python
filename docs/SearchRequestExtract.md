@@ -1,6 +1,6 @@
 # SearchRequestExtract
 
-Configuration for extracting page content from search results. When provided, the API will fetch and extract the content from the specified number of result pages.
+Configuration for extracting page content from search results. When provided, the API will fetch and extract the content from the specified number of result pages.  **NOTE: Use of this option incurs additional cost, billed at your account's rate for the Extract API**.  The resulting page markdown will update the value of the `snippet` field on the respective result item. 
 
 ## Properties
 

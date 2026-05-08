@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **regex** | **str** | The regex pattern to match. | [optional] 
-**replacement** | **str** | The replacement string to apply when the pattern matches. | [optional] 
+**replacement** | **str** | The replacement string to apply when the pattern matches. Will preserve paths and query parameters if not overwritten. You can refer to capture groups with \&quot;$1\&quot;, \&quot;$2\&quot;, etc. | [optional] 
 
 ## Example
 
