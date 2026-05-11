@@ -1,6 +1,6 @@
 # SearchRequestFilters
 
-Filters to apply to search results for more targeted queries.
+Filters to apply to search results for more targeted queries.  **NOTE:** Any parameter here that overlaps with lenses will take priority over the lens. 
 
 ## Properties
 

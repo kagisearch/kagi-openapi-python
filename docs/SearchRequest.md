@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **lens** | [**SearchRequestLens**](SearchRequestLens.md) |  | [optional] 
 **timeout** | **float** | Number of seconds to allow for collecting search results. Lower values will return results more quickly, but may be lower quality or inconsistent between calls. If omitted, will use the latest recommended value by Kagi. | [optional] 
 **page** | **int** | Page number for paginated results. Must be between 1 and 10. | [optional] 
-**limit** | **int** | Maximum number of results to return. Must be between 1 and 1024. | [optional] 
+**limit** | **int** | Maximum number of results to return. Must be between 1 and 1024.  **NOTE:** This does not change the amount of results requested, it only limits the maximum amount returned. If omitted, the API always gives you the most results we can get in a single pass.  | [optional] 
 **filters** | [**SearchRequestFilters**](SearchRequestFilters.md) |  | [optional] 
 **extract** | [**SearchRequestExtract**](SearchRequestExtract.md) |  | [optional] 
 **safe_search** | **bool** | Whether safe search is enabled, omitting potentially NSFW content. | [optional] [default to True]

@@ -1,13 +1,13 @@
 # SearchRequestExtract
 
-Configuration for extracting page content from search results. When provided, the API will fetch and extract the content from the specified number of result pages.  **NOTE: Use of this option incurs additional cost, billed at your account's rate for the Extract API**.  The resulting page markdown will update the value of the `snippet` field on the respective result item. 
+Configuration for extracting page content from search results. When provided, the API will fetch and extract the content from the specified number of result pages.  The resulting page markdown will update the value of the `snippet` field on the respective result item.  **NOTE:** Use of this option incurs additional cost, billed at your account's rate for the Extract API based on the number of units requested. You will not be charged if there were no results to extract. 
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **count** | **int** | Number of search results to extract content from. Must be between 1 and 10. | [optional] 
-**timeout** | **float** | Timeout in seconds for extraction of each page. If omitted, uses the default timeout. | [optional] 
+**timeout** | **float** | Timeout in seconds for extraction of each page. If omitted, uses the default timeout. This time budget is in addition to the allocated top-level search timeout, so that you can control both independently. | [optional] 
 
 ## Example
 

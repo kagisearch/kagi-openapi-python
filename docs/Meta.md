@@ -7,7 +7,6 @@ This object is subject to change as it is provided for debugging purposes. Field
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **trace** | **str** | Trace ID that can be used to debug individual API requests. Provide this, if needed, when contacting Kagi support. | [optional] 
-**id** | **str** |  | [optional] 
 **node** | **str** | The hostname of the node that fulfilled the request. | [optional] 
 **ms** | **int** | how long the request took to fulfill, excluding round trip to the client. | [optional] 
 

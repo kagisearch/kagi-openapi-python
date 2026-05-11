@@ -7,7 +7,7 @@ API error response for Extract operations
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **str** | Namespaced error code | 
-**url** | **str** | URL to error documentation | 
+**url** | **str** | URL to error documentation.  **NOTE:** These URLs are still a work in progress and will currently return a 404 error. These will be updated to real URLs as the preview period continues.  | 
 **message** | **str** | Human-readable error message | [optional] 
 **location** | **str** | Field location where the error occurred | [optional] 
 
