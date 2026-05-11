@@ -40,7 +40,7 @@ class TestExtractRequest(unittest.TestCase):
                     openapi_client.models.page_input.pageInput(
                         url = 'https://example.com/article', )
                     ],
-                timeout = 30,
+                timeout = 1.337,
                 format = 'json'
             )
         else:

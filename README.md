@@ -113,7 +113,7 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.ExtractApi(api_client)
-    extract_request = {"pages":[{"url":"https://example.com/article1"},{"url":"https://example.com/article2"}],"timeout":30,"format":"json"} # ExtractRequest | 
+    extract_request = {"pages":[{"url":"https://example.com/article1"},{"url":"https://example.com/article2"}],"timeout":1.337,"format":"json"} # ExtractRequest | 
 
     try:
         # Extract page content as markdown from URLs

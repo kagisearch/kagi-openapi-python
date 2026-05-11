@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
 from openapi_client.models.page_input import PageInput
@@ -31,7 +31,7 @@ class ExtractRequest(BaseModel):
     Request body for content extraction
     """ # noqa: E501
     pages: Annotated[List[PageInput], Field(min_length=1, max_length=10)] = Field(description="Array of pages to extract content from. Must contain 1-10 URLs. Each URL must be a valid HTTPS URL. ")
-    timeout: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Optional timeout in seconds for the extraction operation")
+    timeout: Optional[Union[Annotated[float, Field(le=10, strict=True, ge=0.5)], Annotated[int, Field(le=10, strict=True, ge=1)]]] = Field(default=None, description="Optional timeout in seconds for the extraction operation. Out of range values will be clamped back within range.  All URLs are fetched concurrently. This timeout applies a time budget for the entire bulk fetch operation. ")
     format: Optional[StrictStr] = Field(default='json', description="**(EXPERIMENTAL)** Format to serialize the API response as. The exact contents and structure of markdown output is still being worked on - please send your feedback!")
     __properties: ClassVar[List[str]] = ["pages", "timeout", "format"]
 
