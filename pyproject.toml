@@ -1,5 +1,5 @@
 [project]
-name = "openapi_client"
+name = "kagi_client"
 version = "1.0.0"
 description = "Kagi API"
 authors = [
@@ -18,7 +18,7 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/kagisearch/kagi-openapi-python"
+Repository = "https://github.com/GIT_USER_ID/GIT_REPO_ID"
 
 [tool.poetry]
 requires-poetry = ">=2.0"
@@ -41,7 +41,7 @@ extension-pkg-whitelist = "pydantic"
 
 [tool.mypy]
 files = [
-  "openapi_client",
+  "kagi_client",
   #"test",  # auto-generated tests
   "tests", # hand-written tests
 ]
@@ -79,7 +79,7 @@ disallow_any_generics = true
 
 [[tool.mypy.overrides]]
 module = [
-  "openapi_client.configuration",
+  "kagi_client.configuration",
 ]
 warn_unused_ignores = true
 strict_equality = true
