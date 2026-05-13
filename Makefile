@@ -5,4 +5,5 @@ generate:
 		-i $(SPEC_URL) \
 		-g python \
 		-o . \
-		-c config.yaml
+		-c config.yaml \
+		-t templates/

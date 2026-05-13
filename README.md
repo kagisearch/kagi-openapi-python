@@ -50,28 +50,27 @@ For more information, please visit [https://kagi.com/support](https://kagi.com/s
 Python 3.10+
 
 ## Installation & Usage
-### pip install
-
-If the python package is hosted on a repository, you can install directly using:
+### PyPI
 
 ```sh
-pip install git+https://github.com/kagisearch/kagi-openapi-python.git
+pip install kagi-client
 ```
-(you may need to run `pip` with root permission: `sudo pip install git+https://github.com/kagisearch/kagi-openapi-python.git`)
+
+> **Note:** If you're installing a prerelease version, add the `--pre` flag:
+> ```sh
+> pip install --pre kagi-client
+> ```
 
 Then import the package:
 ```python
 import kagi_client
 ```
 
-### Setuptools
-
-Install via [Setuptools](http://pypi.python.org/pypi/setuptools).
+### From source
 
 ```sh
-python setup.py install --user
+pip install git+https://github.com/kagisearch/kagi-openapi-python.git
 ```
-(or `sudo python setup.py install` to install the package for all users)
 
 Then import the package:
 ```python
